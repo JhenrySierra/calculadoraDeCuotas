@@ -12,9 +12,9 @@
 
 let datos = function (nombre, precio, descuento, tasa, cuotas) {
 
-    nombre = prompt("Ingrese su nombre")
+    nombre = prompt("Bienvenido a Calculadora de Cuotas \n\nEsta herramienta te ayudará a calcular cuotas de cualquier producto en base a su Precio Inicial, Descuento (si aplica), Tasa de Interes y Cantidad de cuotas. \n\nPara iniciar tu calculo, ingresa tu nombre:")
     while (!nombre) {
-        nombre = prompt("Ingrese su Nombre, Intente nuevamente");
+        nombre = prompt("Bienvenido a Calculadora de Cuotas! \nEsta herramienta te ayudará a calcular cuotas de cualquier producto en base a su Precio Inicial, Descuento (si aplica), Tasa de Interes y Cantidad de cuotas. \n\nPara iniciar tu calculo, favor de ingresar tu nombre nuevamente:");
     }
 
     precio = Number(prompt("Gracias " + nombre + ", \n \nIngrese el precio del producto deseado: "));
