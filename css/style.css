@@ -1,5 +1,6 @@
 body {
     display: flex;
+    flex-direction: column;
     color: rgb(239, 242, 255);
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-image: url(https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/v1016-c-08_1-ksh6mza3.jpg?w=1200&h=1200&dpr=1&fit=clip&crop=default&fm=jpg&q=75&vib=3&con=3&usm=15&cs=srgb&bg=F4F4F3&ixlib=js-2.2.1&s=28e2a308dde6846abfed2dcafd90d7ef);
@@ -59,4 +60,15 @@ body {
 .btn-nuevoCalculo:hover {
     background-color: rgb(53, 53, 143);
     color: rgb(255, 255, 255);
+}
+
+footer {
+    margin: auto;
+    justify-content: center;
+    width: 100%;
+    max-width: 300px;
+    background-color: rgb(40, 32, 53);
+    color: rgb(201, 201, 201);
+    text-align: center;
+    padding: 1%;
 }
