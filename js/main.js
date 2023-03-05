@@ -1,4 +1,4 @@
-// Calculadora de cuotas para prestamos
+// Calculadora de Cuotas 
 
 /*
 1)_Preguntar por prompt el nombre del usuario
@@ -7,83 +7,14 @@
 4)_Preguntar por prompt la tasa de interes anual.
 5)_Preguntar por prompt la cantidad de cuotas
 6)_Realizar calculos internamentes
-7)_Mandar resultados por alert
-*/
-/*
-let datos = function (nombre, precio, descuento, tasa, cuotas) {
-
-    nombre = prompt(`Bienvenido a Calculadora de Cuotas \n\nEsta herramienta te ayudará a calcular cuotas de cualquier producto en base a su Precio Inicial, Descuento (si aplica), Tasa de Interes y Cantidad de cuotas. \n\nPara iniciar tu calculo, ingresa tu nombre:`)
-    while (!nombre) {
-        nombre = prompt(`Bienvenido a Calculadora de Cuotas! \nEsta herramienta te ayudará a calcular cuotas de cualquier producto en base a su Precio Inicial, Descuento (si aplica), Tasa de Interes y Cantidad de cuotas. \n\nPara iniciar tu calculo, favor de ingresar tu nombre nuevamente:`);
-    }
-
-    precio = Number(prompt("Gracias " + nombre + ", \n \nIngrese el precio del producto deseado: "));
-    while (!precio) {
-        precio = Number(prompt("Entrada Invalida, Ingrese el precio del producto deseado: "));
-    }
-
-    descuento = Number(prompt("Introduzca descuento ofrecido (si no tiene descuento salte al siguiente paso)"));
-    while (isNaN(descuento)) {
-        descuento = Number(prompt("Introduzca descuento ofrecido (si no tiene descuento salte al siguiente paso)"));
-    }
-
-    let precioFinal = (precio - descuento);
-
-    tasa = Number(prompt("Precio Final: $" + precioFinal + "\n \n \nIngrese la tasa de interes anual"));
-    while (!tasa) {
-        tasa = Number(prompt("Precio Final: $" + precioFinal + "\n \n \nEntrada Invalida. Ingrese la tasa de interes anual "));
-    }
-
-    let interes = ((precioFinal * tasa) / 100);
-
-    cuotas = Number(prompt("Precio Final: $" + precioFinal +
-        "\nTasa: " + tasa + "%" +
-        "\nTotal : $" + (precioFinal + interes) +
-        "\n\nIngrese la cantidad de cuotas"));
-
-    while (!cuotas) {
-        cuotas = Number(prompt("Precio Final: $" + precioFinal + "\nTasa: " + tasa + "% \n \nEntrada Invalida. Ingrese la cantidad de cuotas"));
-    }
-
-    let resultado = (precioFinal + interes) / cuotas;
-    resultado = resultado.toFixed(2);
-
-    let mensaje = "Gracias " + nombre +
-        ", \n\nSu producto de $" + precio +
-        ", con un descuento de $" + descuento +
-        ", queda en un precio final de $ " + precioFinal +
-        ", con una tasa de interes de " + tasa +
-        "%, equivale a " + cuotas +
-        " cuotas de $" + resultado + " mensual\n\n"
-
-    let desglose = "Precio: $" + precio +
-        "\nDescuento: $" + descuento +
-        "\nPrecio Final:  $" + precioFinal +
-        "\nTasa: " + tasa +
-        "% \nCantidad de cuotas: " + cuotas +
-        "\nMonto por cuota: $" + resultado +
-        "\n\nHaz click Aqui para solicitar prestamo"
-
-    alert(mensaje + desglose);
-
-    document.getElementById('title').innerHTML = "Bienvenido " + nombre + "!";
-
-    document.getElementById('desglose').innerHTML =
-        "- Precio: $" + precio +
-        "<br>- Descuento: $" + descuento +
-        "<br>- Precio Final: $" + precioFinal +
-        "<br>- Tasa: " + tasa +
-        "% <br> - Cantidad de cuotas: " + cuotas +
-        "<br> - Monto por cuota: $" + resultado +
-        "<br><br>";
-}
-
-datos();
+7)_Almacenar datos como Objetos dentro de un Array
+8)_Boton de filtrar por cuotas
 */
 
-
+//Un array vacio, el cual almacenara los datos de calculos hechos
 let calculos = [];
 
+//Funcion que pedira los datos del usuario y del calculo deseado
 function calcularCuotas() {
     let datos = {};
     datos.nombre = prompt(`Bienvenido a Calculadora de Cuotas \n\nEsta herramienta te ayudará a calcular cuotas de cualquier producto en base a su Precio Inicial, Descuento (si aplica), Tasa de Interes y Cantidad de cuotas. \n\nPara iniciar tu calculo, ingresa tu nombre:`);
@@ -93,12 +24,12 @@ function calcularCuotas() {
 
     datos.precio = Number(prompt(`Gracias ${datos.nombre}, \n \nIngrese el precio del producto deseado: `));
     while (!datos.precio) {
-        datos.precio = Number(prompt("Entrada Invalida, Ingrese el precio del producto deseado: "));
+        datos.precio = Number(prompt(`Entrada Invalida, Ingrese el precio del producto deseado: `));
     }
 
-    datos.descuento = Number(prompt("Introduzca descuento ofrecido (si no tiene descuento salte al siguiente paso)"));
+    datos.descuento = Number(prompt(`Introduzca descuento ofrecido (si no tiene descuento salte al siguiente paso)`));
     while (isNaN(datos.descuento)) {
-        datos.descuento = Number(prompt("Introduzca descuento ofrecido (si no tiene descuento salte al siguiente paso)"));
+        datos.descuento = Number(prompt(`Introduzca descuento ofrecido (si no tiene descuento salte al siguiente paso)`));
     }
 
     datos.precioFinal = datos.precio - datos.descuento;
@@ -125,28 +56,37 @@ function calcularCuotas() {
 
     let desglose = `Precio: $${datos.precio}\nDescuento: $${datos.descuento}\nPrecio Final: $${datos.precioFinal}\nTasa: ${datos.tasa}%\nCantidad de cuotas: ${datos.cuotas}\nMonto por cuota: $${resultado}\n\nHaz click Aqui para solicitar prestamo`;
 
+    //Mensaje alert que mostrara el mensaje + desglose
     alert(mensaje + desglose);
 
-    document.getElementById('title').innerHTML = "Bienvenido " + datos.nombre + "!";
+    //Mostrar mensaje dentro del HTML
+    document.getElementById('title').innerHTML = `Bienvenido ${datos.nombre}!`;
+    document.getElementById('desglose').innerHTML = `
+        Vea debajo el desglose de su calculo de sus cuotas:
+        <br><br>- Precio: $${datos.precio}
+        <br>- Descuento: $${datos.descuento}
+        <br>- Precio Final: $${datos.precioFinal}
+        <br>- Tasa: ${datos.tasa}% 
+        <br>- Cantidad de cuotas: ${datos.cuotas}
+        <br> - Monto por cuota: $${resultado}
+        <br><br>`;
 
-    document.getElementById('desglose').innerHTML =
-        "Vea debajo el desglose de su calculo de su credito:" +
-        "<br><br>- Precio: $" + datos.precio +
-        "<br>- Descuento: $" + datos.descuento +
-        "<br>- Precio Final: $" + datos.precioFinal +
-        "<br>- Tasa: " + datos.tasa +
-        "% <br> - Cantidad de cuotas: " + datos.cuotas +
-        "<br> - Monto por cuota: $" + resultado +
-        "<br><br>";
-
+    //Objeto'datos' se agregua dentro del Array'calculos' y console log de Array'calculos'
     calculos.push(datos);
     console.log(calculos);
 }
 
-/*
-calcularCuotas();
-*/
-document.getElementById('calcularBtn').addEventListener('click', calcularCuotas);
+//Funcion que crea el filtro por cuotas
+function filtrarCuotas(data) {
+    let cuotaFiltrada = Number(prompt(`Ingrese la cantidad de cuotas a filtrar: `));
+    let dataFiltrada = data.filter(item => item.cuotas === cuotaFiltrada);
+    console.log(`Calculos filtrados por cantidad de cuotas: ${cuotaFiltrada}`, dataFiltrada);
+}
 
+//Hacer que el boton 'filtrarCuotas' ejecute la funcion filtrarCuotas (Esto lo hice dentro de una funcion anonima porque la funcion 'filtrarCuotas' se ejecutaba desde que se ejecutaba el programa y no esparaba que de click al boton)
+document.getElementById('filtrarCuotas').addEventListener('click', function () {
+    filtrarCuotas(calculos);
+});
 
-
+//Hacer que boton 'calcularBtn' ejecute la funcion 'calcularCuotas'
+document.getElementById('calcularBtn').addEventListener('click', calcularCuotas)

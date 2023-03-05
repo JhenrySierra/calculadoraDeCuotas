@@ -43,10 +43,11 @@ body {
     display: flex;
     justify-content: center;
     width: 100%;
+    margin-top: 1rem;
 
 }
 
-#calcularBtn {
+#calcularBtn, #filtrarCuotas {
     background-color: rgb(85, 85, 224);
     padding: .5rem 1rem;
     border-radius: .5rem;
@@ -58,9 +59,10 @@ body {
     border: none;
 }
 
-#calcularBtn:hover {
+#calcularBtn:hover, #filtrarCuotas:hover {
     background-color: rgb(53, 53, 143);
     color: rgb(255, 255, 255);
+    cursor: pointer;
 }
 
 footer {
