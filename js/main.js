@@ -7,8 +7,12 @@
 4)_Preguntar por prompt la tasa de interes anual.
 5)_Preguntar por prompt la cantidad de cuotas
 6)_Realizar calculos internamentes
+<<<<<<< HEAD
 7)_Almacenar datos como Objetos dentro de un Array
 8)_Boton de filtrar por cuotas
+=======
+7)_Mandar resultados por alert
+>>>>>>> b010a7b79c3873d39e6ede287f5939e6f46252bb
 */
 
 //Un array vacio, el cual almacenara los datos de calculos hechos
