@@ -58,6 +58,7 @@ body {
     font-size: 14px;
     margin: auto;
     border: none;
+    flex-wrap: wrap;
 }
 
 footer {
@@ -84,11 +85,15 @@ footer {
     display: flex;
     margin-right: 1rem;
     justify-content: space-between;
+    flex-wrap: wrap;
 
 }
 
 #form input {
-    width: 50%;
+    width: 100%;
+    min-width: 200px;
+    max-width: 300px;
+    margin-left: 2.3rem;
 }
 
 #resultadosContainer {
