@@ -60,12 +60,6 @@ body {
     border: none;
 }
 
-#calcularBtn:hover, #guardar:hover , #limpiar:hover {
-    background-color: rgb(53, 53, 143);
-    color: rgb(255, 255, 255);
-    cursor: pointer;
-}
-
 footer {
     margin: auto;
     justify-content: center;
