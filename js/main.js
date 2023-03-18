@@ -142,14 +142,14 @@ calcularBtn.addEventListener('click', () => {
 
     //Mostrar resultados en HTML
     resultados.innerHTML = `
-    Nombre:             ${nombreHTML.replace(/"/g, '')} <br>
-    Precio:             $${precioHTML.replace(/"/g, '')} <br>
-    Descuento:          $${descuentoHTML.replace(/"/g, '')} <br>
-    Precio Final:       $${precioFinal} <br>
-    Tasa de Interes:    ${tasaHTML.replace(/"/g, '')}% <br>
-    Interes Total:      $${interes} <br>
-    Cantidad de Cuotas: ${cuotasHTML.replace(/"/g, '')} <br>
-    Monto por Cuota:    $${montoCuota}
+    <strong>Nombre:</strong>              ${nombreHTML.replace(/"/g, '')} <br>
+    <strong>Precio:</strong>              $${precioHTML.replace(/"/g, '')} <br>
+    <strong>Descuento:</strong>           $${descuentoHTML.replace(/"/g, '')} <br>
+    <strong>Precio Final:</strong>        $${precioFinal} <br>
+    <strong>Tasa de Interes:</strong>     ${tasaHTML.replace(/"/g, '')}% <br>
+    <strong>Interes Total:</strong>       $${interes} <br>
+    <strong>Cantidad de Cuotas:</strong>  ${cuotasHTML.replace(/"/g, '')} <br>
+    <strong>Monto por Cuota:</strong>     $${montoCuota}
     `
 
     guardar.addEventListener('click', () => {

@@ -45,6 +45,8 @@ body {
     justify-content: center;
     width: 100%;
     margin-top: 1rem;
+    flex-wrap: wrap;
+    gap: 1rem   ;
 
 }
 
@@ -58,7 +60,6 @@ body {
     font-size: 14px;
     margin: auto;
     border: none;
-    flex-wrap: wrap;
 }
 
 footer {
@@ -89,11 +90,17 @@ footer {
 
 }
 
-#form input {
-    width: 100%;
+#form label {
+    width: 50%;
     min-width: 200px;
     max-width: 300px;
-    margin-left: 2.3rem;
+    margin: auto;
+}
+
+#form input {
+    width: 50%;
+    min-width: 300px;
+    margin: auto;
 }
 
 #resultadosContainer {
@@ -115,5 +122,10 @@ footer {
 #resultadosContainer h2 {
     font-size: 20px;
     font-weight: bold;
+    margin: 1rem;
     
+}
+
+#resultados {
+    margin-bottom: 1rem;
 }
