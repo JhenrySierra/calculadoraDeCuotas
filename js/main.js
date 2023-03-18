@@ -13,7 +13,7 @@
 
 //Un array vacio, el cual almacenara los datos de calculos hechos
 let calculos = [];
-
+/*
 //Funcion que pedira los datos del usuario y del calculo deseado
 function calcularCuotas() {
     let datos = {};
@@ -90,3 +90,83 @@ document.getElementById('filtrarCuotas').addEventListener('click', function () {
 
 //Hacer que boton 'calcularBtn' ejecute la funcion 'calcularCuotas'
 document.getElementById('calcularBtn').addEventListener('click', calcularCuotas)
+*/
+
+
+//Funcion que me captura la informacion de los inputs
+
+let form = document.getElementById('form');
+let calcularBtn = document.getElementById('calcularBtn');
+let limpiar = document.getElementById('limpiar')
+let guardar = document.getElementById('guardar');
+let resultados = document.getElementById('resultados')
+
+calcularBtn.addEventListener('click', () => {
+    //Capturar valores del formulario
+    let nombre = document.getElementById('nombre').value;
+    let precio = document.getElementById('precio').value;
+    let descuento = document.getElementById('descuento').value;
+    let tasa = document.getElementById('tasa').value;
+    let cuotas = document.getElementById('cuotas').value;
+
+    //Crear variables para los calculos
+
+    let precioFinal = precio - descuento;
+    let interes = precioFinal * tasa / 100;
+    let montoCuota = ((precioFinal + interes) / cuotas).toFixed(2);
+
+    // Verificar si los campos tienen datos validos
+    if (isNaN(parseFloat(precio)) || isNaN(parseFloat(descuento)) || isNaN(parseFloat(tasa)) || isNaN(parseInt(cuotas))) {
+        alert('Por favor, ingrese datos válidos en los campos correspondientes.');
+        return;
+    }
+
+    //Guardar los datos dentro de un objeto
+    let datos = {
+        nombre: nombre,
+        precio: precio,
+        descuento: descuento,
+        precioFinal: precio - descuento,
+        tasa: tasa,
+        interes: precioFinal * tasa / 10,
+        cuotas: cuotas,
+        montoCuota: ((precioFinal + interes) / cuotas).toFixed(2)
+    };
+
+    //Convertir los datos del formulario en strings
+    let nombreHTML = JSON.stringify(datos.nombre);
+    let precioHTML = JSON.stringify(datos.precio);
+    let descuentoHTML = JSON.stringify(datos.descuento);
+    let tasaHTML = JSON.stringify(datos.tasa);
+    let cuotasHTML = JSON.stringify(datos.cuotas);
+
+    //Mostrar resultados en HTML
+    resultados.innerHTML = `
+    Nombre:             ${nombreHTML.replace(/"/g, '')} <br>
+    Precio:             $${precioHTML.replace(/"/g, '')} <br>
+    Descuento:          $${descuentoHTML.replace(/"/g, '')} <br>
+    Precio Final:       $${precioFinal} <br>
+    Tasa de Interes:    ${tasaHTML.replace(/"/g, '')}% <br>
+    Interes Total:      $${interes} <br>
+    Cantidad de Cuotas: ${cuotasHTML.replace(/"/g, '')} <br>
+    Monto por Cuota:    $${montoCuota}
+    `
+
+    guardar.addEventListener('click', () => {
+        localStorage.setItem(nombre, JSON.stringify(datos));
+
+    })
+}
+);
+
+limpiar.addEventListener('click', () => {
+    form.reset();
+})
+
+
+
+
+
+
+
+

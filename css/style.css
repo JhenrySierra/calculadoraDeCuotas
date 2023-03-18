@@ -22,6 +22,7 @@ body {
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(6.5px);
     -webkit-backdrop-filter: blur(6.5px);
+    margin-top: 2rem;
 }
 
 #title {
@@ -47,7 +48,7 @@ body {
 
 }
 
-#calcularBtn, #filtrarCuotas {
+#calcularBtn, #guardar, #limpiar {
     background-color: rgb(85, 85, 224);
     padding: .5rem 1rem;
     border-radius: .5rem;
@@ -59,7 +60,7 @@ body {
     border: none;
 }
 
-#calcularBtn:hover, #filtrarCuotas:hover {
+#calcularBtn:hover, #guardar:hover , #limpiar:hover {
     background-color: rgb(53, 53, 143);
     color: rgb(255, 255, 255);
     cursor: pointer;
@@ -74,4 +75,46 @@ footer {
     color: rgb(201, 201, 201);
     text-align: center;
     padding: 1%;
+}
+
+#form {
+    display: flex;
+    flex-direction: column;
+    min-width: 320px;
+    margin: auto;
+    margin-top: 2rem;
+    row-gap: 1rem;
+}
+
+.formItem {
+    display: flex;
+    margin-right: 1rem;
+    justify-content: space-between;
+
+}
+
+#form input {
+    width: 50%;
+}
+
+#resultadosContainer {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    background: rgba(181, 181, 181, 0.13);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0);
+    backdrop-filter: blur(1.5px);
+    -webkit-backdrop-filter: blur(1.5px);
+    
+}
+
+#resultadosContainer h2 {
+    font-size: 20px;
+    font-weight: bold;
+    
 }
