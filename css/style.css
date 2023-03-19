@@ -12,7 +12,7 @@ body {
 }
 
 .mainContainer {
-    width: 80%;
+    width: 95%;
     max-width: 1080px;
     margin: auto;
     padding: 1rem;
@@ -76,7 +76,6 @@ footer {
 #form {
     display: flex;
     flex-direction: column;
-    min-width: 320px;
     margin: auto;
     margin-top: 2rem;
     row-gap: 1rem;
@@ -84,7 +83,6 @@ footer {
 
 .formItem {
     display: flex;
-    margin-right: 1rem;
     justify-content: space-between;
     flex-wrap: wrap;
 
@@ -99,7 +97,7 @@ footer {
 
 #form input {
     width: 50%;
-    min-width: 300px;
+    min-width: 250px;
     margin: auto;
 }
 
@@ -112,11 +110,11 @@ footer {
     align-items: center;
     margin-top: 2rem;
     background: rgba(181, 181, 181, 0.13);
-    border-radius: 16px;
+    border-radius: .5rem;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0);
     backdrop-filter: blur(1.5px);
     -webkit-backdrop-filter: blur(1.5px);
-    
+    margin-bottom: 1rem;
 }
 
 #resultadosContainer h2 {
@@ -128,4 +126,21 @@ footer {
 
 #resultados {
     margin-bottom: 1rem;
+}
+
+#contenedorCalculos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.card {
+    background-color: rgba(131, 117, 255, 0.363);
+    color: white;
+
+}
+
+p {
+    line-height: 5px;
 }
