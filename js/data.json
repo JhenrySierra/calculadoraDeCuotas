@@ -1,0 +1,7 @@
+[{"nombre":"Antonio","precio":"1000000","descuento":"1254","precioFinal":998746,"tasa":"12","interes":1198495.2,"cuotas":"12","montoCuota":"93216.29"},
+{"nombre":"Pedro","precio":"100000","descuento":"1215454","precioFinal":-1115454,"tasa":"12","interes":-1338544.8,"cuotas":"12","montoCuota":"-104109.04"},
+{"nombre":"Juan","precio":"100000","descuento":"12121","precioFinal":87879,"tasa":"12","interes":105454.8,"cuotas":"11","montoCuota":"8947.68"},
+{"nombre":"Jhenry","precio":"1000000","descuento":"500000","precioFinal":500000,"tasa":"12","interes":600000,"cuotas":"12","montoCuota":"46666.67"},
+{"nombre":"Mario","precio":"1635132","descuento":"4465","precioFinal":1630667,"tasa":"12","interes":1956800.4,"cuotas":"12","montoCuota":"152195.59"},
+{"nombre":"Jose","precio":"100000","descuento":"1254","precioFinal":98746,"tasa":"12","interes":118495.2,"cuotas":"12","montoCuota":"9216.29"}
+]

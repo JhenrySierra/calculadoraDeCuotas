@@ -62,6 +62,10 @@ body {
     border: none;
 }
 
+#calcularBtn:hover, #guardar:hover, #limpiar:hover {
+    background-color: rgb(39, 39, 100);
+}
+
 footer {
     margin: auto;
     justify-content: center;
@@ -71,6 +75,7 @@ footer {
     color: rgb(201, 201, 201);
     text-align: center;
     padding: 1%;
+    margin-top: 25.6%;
 }
 
 #form {
@@ -128,7 +133,7 @@ footer {
     margin-bottom: 1rem;
 }
 
-#contenedorCalculos {
+#contenedorCalculos, #contenedorCalculosJSON {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;

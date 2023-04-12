@@ -1,3 +1,4 @@
+
 // Calculadora de Cuotas 
 
 /*
@@ -6,6 +7,7 @@
 3)_Hace los calculos internos y muestra los resultados por HTML
 4)_Posee botones con distintas funciones como Calcular, Limpiar Formulario y Guardar en localStorage
 5)_Posee una seccion de Calculos Guardados que muestra los calculos guardados en localStorage
+6)_Posee una seccion de Calculos JSON local que muestra los calculos localizados en JSON local. 
 */
 
 //Selecciona elementos HTML
@@ -70,7 +72,8 @@ calcularBtn.addEventListener('click', () => {
     guardar.addEventListener('click', () => {
         localStorage.setItem(nombre, JSON.stringify(datos));
         actualizarContenedorCalculos();
-
+        Swal.fire('Su calculo ha sido guardado');
+        actualizarJSON();
     })
 }
 );
@@ -121,8 +124,7 @@ function generarCardCalculo(key, data) {
         </div>
     </div>
     `;
-}
-
+};
 // Actualizar contenedor HTML "contenedorCalculos"  con los datos del local Storage
 function actualizarContenedorCalculos() {
     contenedorCalculos.innerHTML = '';
@@ -132,4 +134,42 @@ function actualizarContenedorCalculos() {
         let itemHTML = generarCardCalculo(key, data);
         contenedorCalculos.innerHTML += itemHTML;
     }
+};
+
+//Al intentar crear una funcion para que los calculos se guarden en el JSON local utilizando Method: "PUT" y agregandola con un EventListener, en consola sale error de "METHOD NOT ALLOWED", razon por la cual solo pude utilizar fetch para mostrar los elementos estaticos de JSON por DOM
+/*
+function actualizarJSON(jsonData) {
+    jsonData = JSON.stringify(localStorage)
+    fetch("./js/data.json", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: jsonData
+    })
 }
+*/
+
+//FETCH obtiene los objetos del JSON Local y los muestra por pantalla mediante DOM.
+fetch('./js/data.json')
+    .then(response => response.json())
+    .then(data => {
+        const cardsHtml = data.map(item => `
+    <div class="card calculoGuardado">
+        <div class="card-body ">
+            <h5 class="card-title"><strong>Nombre: ${item.nombre}</strong></h5>
+            <p class="card-text"><strong>Precio:</strong> $${item.precio}</p>
+            <p class="card-text"><strong>Descuento:</strong> $${item.descuento}</p>
+            <p class="card-text"><strong>Precio Final:</strong> $${item.precioFinal}</p>
+            <p class="card-text"><strong>Tasa de Interes:</strong> ${item.tasa}%</p>
+            <p class="card-text"><strong>Interes Total:</strong> $${item.interes}</p>
+            <p class="card-text"><strong>Cantidad de Cuotas:</strong> ${item.cuotas}</p>
+            <p class="card-text"><strong>Monto por Cuota:</strong> $${item.montoCuota}</p>
+        </div>
+    </div>
+    `).join('');
+
+        const contenedorCalculosJSON = document.getElementById('contenedorCalculosJSON');
+        contenedorCalculosJSON.innerHTML = cardsHtml;
+    })
+    .catch(error => console.error(error));
